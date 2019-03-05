@@ -11,10 +11,10 @@ def init():
     driver = webdriver.Chrome('driver/chromedriver', chrome_options=chrome_options)
 
 def login_cred(email = "", password = ""):
-    LOGIN_URL = "https://uwealthmktg.com/members/login"
-    EMAIL_XPATH = '//*[@id="scroll-to"]/div/div/table/tbody/tr/td[2]/div/form/div[1]/div[2]/input'
-    PASS_XPATH = '//*[@id="scroll-to"]/div/div/table/tbody/tr/td[2]/div/form/div[2]/div[2]/input'
-    BTN_XPATH = '//*[@id="scroll-to"]/div/div/table/tbody/tr/td[2]/div/form/div[3]/div/div/button'
+    LOGIN_URL = "https://uwealthmktg.com/"
+    EMAIL_XPATH = '//*[@id="inputEmail"]'
+    PASS_XPATH = '//*[@id="inputPassword"]'
+    BTN_XPATH = '/html/body/app-root/app-member-login/div/body/main/div/form/div[3]/button'
 
     driver.get(LOGIN_URL)
 
@@ -25,12 +25,12 @@ def login_cred(email = "", password = ""):
     print("Current URL: " ,driver.current_url)
 
 def go_to_captcha():
-    CAPTCHA_URL = "https://uwealthmktg.com/members/captcha"
-    CAPTCHA_BTN_XPATH = '//*[@id="scroll-to"]/div/div[1]/div/div[3]/div/div/form/div[2]/button'
+    CAPTCHA_URL = "http://captcha.uwealth100.com/login/5596/uwealthed"
+    CAPTCHA_BTN_XPATH = '/html/body/app-root/app-member-layout/div[2]/div[3]/a[6]'
 
     driver.get(CAPTCHA_URL)
 
-    driver.find_element(By.XPATH, CAPTCHA_BTN_XPATH).click()
+    # driver.find_element(By.XPATH, CAPTCHA_BTN_XPATH).click()
 
     print("Current URL: ", driver.current_url)
 

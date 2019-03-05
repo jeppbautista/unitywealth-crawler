@@ -13,7 +13,7 @@ list_of_captcha = utils.get_captcha(FILE)
 crawl.init()
 crawl.login_cred(USER, PASS)
 crawl.go_to_captcha()
-for i in range(1000):
+while True:
     crawl.crawl_captcha(list_of_captcha)
     print("========Pause=========")
-    time.sleep(20) # seconds
+    time.sleep(15) # seconds
